@@ -7,9 +7,7 @@ Route::get('/', function () {
 
 Route::group(['prefix'=>'backend'],function (){
 
-    Route::get('/login',function(){
-        return "view";
-    });
+    Route::get('/login','Backend\AuthController@showLoginForm');
 
 
 });
