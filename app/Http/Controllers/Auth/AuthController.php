@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Auth;
 
 use App\User;
 use Validator;
@@ -28,9 +28,9 @@ class AuthController extends Controller
      *
      * @var string
      */
-    //protected $redirectTo = '/';
-    protected $redirectTo = '/backend';
-    protected $loginView = 'backend.login';
+    protected $redirectTo = '/';
+    //protected $redirectTo = '/backend';
+    //protected $loginView = 'backend.login';
 
     /**
      * Create a new authentication controller instance.
