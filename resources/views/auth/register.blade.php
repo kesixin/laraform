@@ -1,5 +1,14 @@
 @extends('layouts.app')
 
+@section('styles')
+<style>
+    img.captcha {
+    margin-bottom: 0px;
+    margin-top: 10px;
+    cursor: pointer;
+    }
+</style>
+@endsection
 @section('content')
 <div class="container">
     <div class="row">
@@ -72,13 +81,12 @@
                             <div class="col-md-6">
                                 <input id="captcha" class="form-control" name="captcha" required>
 
-                                <img class="thumbnail captcha" src="{{ captcha_src('flat') }}" onclick="this.src='/captcha/flat?'+Math.random()" title="点击图片重新获取验证码">
-
                                 @if ($errors->has('captcha'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('captcha') }}</strong>
                                     </span>
                                 @endif
+                                <img class="thumbnail captcha" src="{{ captcha_src('flat') }}" onclick="this.src='/captcha/flat?'+Math.random()" title="点击图片重新获取验证码">
                             </div>
                         </div>
 

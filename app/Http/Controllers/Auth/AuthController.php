@@ -58,6 +58,7 @@ class AuthController extends Controller
         ],[
             'email.unique'=>'该邮箱已注册',
             'password.min'=>'密码不少于6位数',
+            'password.confirmed'=>'密码不一致',
             'captcha.required'=>'验证码不能为空',
             'captcha.captcha'=>'请输入正确的验证码',
         ]);
