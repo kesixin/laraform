@@ -51,9 +51,15 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
+            'captcha'=>'required|captcha',
+        ],[
+            'email.unique'=>'该邮箱已注册',
+            'password.min'=>'密码不少于6位数',
+            'captcha.required'=>'验证码不能为空',
+            'captcha.captcha'=>'请输入正确的验证码',
         ]);
     }
 

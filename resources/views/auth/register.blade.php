@@ -14,7 +14,7 @@
                             <label for="name" class="col-md-4 control-label">用户名</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -28,7 +28,7 @@
                             <label for="email" class="col-md-4 control-label">邮箱</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -42,7 +42,7 @@
                             <label for="password" class="col-md-4 control-label">密码</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password">
+                                <input id="password" type="password" class="form-control" name="password" required>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -56,7 +56,7 @@
                             <label for="password-confirm" class="col-md-4 control-label">确认密码</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
 
                                 @if ($errors->has('password_confirmation'))
                                     <span class="help-block">
@@ -70,9 +70,9 @@
                             <label for="captcha" class="col-md-4 control-label">验证码</label>
 
                             <div class="col-md-6">
-                                <input id="captcha" class="form-control" name="captcha" >
+                                <input id="captcha" class="form-control" name="captcha" required>
 
-                                {{--<img class="thumbnail captcha" src="{{ captcha_src('flat') }}" onclick="this.src='/captcha/flat?'+Math.random()" title="点击图片重新获取验证码">--}}
+                                <img class="thumbnail captcha" src="{{ captcha_src('flat') }}" onclick="this.src='/captcha/flat?'+Math.random()" title="点击图片重新获取验证码">
 
                                 @if ($errors->has('captcha'))
                                     <span class="help-block">
