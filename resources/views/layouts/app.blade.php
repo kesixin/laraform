@@ -22,7 +22,7 @@
 
     @yield('content')
 
-    @include('layouts.footer')
+    {{--@include('layouts.footer')--}}
     <!-- JavaScripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     @yield('scripts')
