@@ -31,12 +31,12 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="{{ url('/') }}"><b>论坛</b> 登录</a>
+        <a href="{{ url('/') }}"><b>分享社区</b> 后台登录</a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg"></p>
-        <form action="{{ url('backend/login') }}"  method="post">
+        <form action="{{ url('admin/login') }}"  method="post">
             {{ csrf_field() }}
 
             <div class="form-group has-feedback {{ $errors->has('email') ? ' has-warning' : '' }}">
@@ -67,7 +67,7 @@
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
                 </div>
                 <!-- /.col -->
             </div>

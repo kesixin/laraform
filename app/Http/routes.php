@@ -20,7 +20,15 @@ Route::post('/password/email', 'Auth\PasswordController@sendResetLinkEmail')->na
 Route::get('/password/reset/{token}', 'Auth\PasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\PasswordController@reset');
 
-Route::group(['prefix'=>'backend'],function (){
+Route::group(['prefix'=>'admin'],function (){
+
+    Route::get('/login','Admin\LoginController@index');
+    Route::post('/login','Admin\LoginController@login');
+    Route::get('/logout','Admin\LoginController@logout');
+
+    Route::group(['middleware'=>'auth:admin'],function (){
+        Route::get('/home', 'Admin\HomeController@index');
+    });
 
 
 
